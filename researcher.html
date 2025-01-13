@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anganwadi Data Access</title>
+    <script>
+        async function fetchData() {
+            const response = await fetch('cleaned_govt_preschools_data.csv');
+            const data = await response.text();
+            return data;
+        }
+
+        function filterData() {
+            const state = document.getElementById("stateFilter").value;
+            const programType = document.getElementById("programTypeFilter").value;
+            const rows = window.data.split('\n');
+            const headers = rows[0];
+            const filtered = rows.filter((row, index) => {
+                if (index === 0) return true;
+                const columns = row.split(',');
+                const stateMatch = state === "" || columns[0] === state;
+                const programMatch = programType === "" || columns[2] === programType;
+                return stateMatch && programMatch;
+            });
+            const csvContent = filtered.join('\n');
+            downloadCSV(csvContent);
+        }
+
+        function downloadCSV(csvContent) {
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "filtered_data.csv";
+            a.click();
+        }
+
+        async function initializePage() {
+            window.data = await fetchData();
+        }
+
+        window.onload = initializePage;
+    </script>
+</head>
+<body>
+    <h1>Access Anganwadi Data</h1>
+    <p>Filter the data based on your requirements and download the results.</p>
+    
+    <label for="stateFilter">Select State:</label>
+    <select id="stateFilter">
+        <option value="">--All States--</option>
+        <option value="Bihar">Bihar</option>
+        <!-- Add other states dynamically if needed -->
+    </select>
+    
+    <label for="programTypeFilter">Select Programme Type:</label>
+    <select id="programTypeFilter">
+        <option value="">--All Programme Types--</option>
+        <option value="1">Type 1</option>
+        <!-- Add other programme types dynamically if needed -->
+    </select>
+    
+    <button onclick="filterData()">Download Filtered Data</button>
+</body>
+</html>
