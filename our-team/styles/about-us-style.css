@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins, fallback to Arial or sans-serif */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Poppins', Arial, sans-serif; /* Apply Poppins to headers */
+    font-weight: 600; /* Use a bold weight for headings */
+}
+
+/* Banner Styling */
+.banner {
+    background-color: #D2B48C; /* Professional tan color */
+    color: #333; /* Dark text for contrast */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Spread items across the banner */
+    width: 100%; /* Ensure the banner stretches across the page */
+    height: auto; /* Let the height adjust based on content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
+    margin: 0; /* Remove extra space around the banner */
+    box-sizing: border-box; /* Include padding/border in width calculations */
+}
+
+/* Banner Content */
+.banner-content {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Separate text group and logo */
+    width: 100%; /* Ensure content spans the full width */
+}
+
+/* Text Content */
+.banner-text {
+    display: flex; /* Group the "About Us" text and Home button */
+    align-items: center; /* Vertically align the text and button */
+    gap: 15px; /* Add spacing between the text and the button */
+}
+
+.banner-text h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.banner-text p {
+    margin: 5px 0 0 0;
+    font-size: 1em;
+}
+
+/* Logo */
+.banner-logo {
+    height: 60px; /* Adjust size of the logo */
+    object-fit: contain; /* Ensure proper scaling */
+}
+
+/* Home Button Styling */
+.home-button {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text for contrast */
+    padding: 8px 15px; /* Add padding for a button-like appearance */
+    border: 1px solid #ddd; /* Subtle border for definition */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Standard font size */
+    font-family: 'Poppins', Arial, sans-serif; /* Match banner font */
+    text-decoration: none; /* Remove underline from the link */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.home-button:hover {
+    background-color: #D2B48C; /* Light tan background on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Member Section Styling */
+.member {
+    background: #fff; /* White background for each member */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px auto;
+    padding: 20px;
+    padding-top: 80px; /* Add extra padding to accommodate the profile photo */
+    max-width: 600px; /* Center and limit width */
+    text-align: left; /* Align the text content to the left */
+    position: relative; /* Ensure child elements like photos are positioned relative to this container */
+}
+
+.member h2 {
+    margin-top: 0; /* Remove unnecessary top margin */
+    font-size: 1.8em; /* Adjust font size for emphasis */
+    color: #800000; /* Harvard maroon */
+}
+
+.member p {
+    margin-top: 10px; /* Add spacing between the header and paragraph */
+    line-height: 1.6; /* Improve readability */
+    font-size: 1em; /* Standard font size */
+}
+
+/* Member Photo */
+.member-photo {
+    width: 105px; /* Set the width of the photo */
+    height: 105px; /* Set the height of the photo */
+    border-radius: 50%; /* Make the photo circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    position: absolute; /* Position the photo relative to the .member container */
+    top: 20px; /* Place it at the top of the box */
+    right: 20px; /* Align the photo to the top-right corner */
+    object-fit: cover; /* Ensure the image fills the circular shape without distortion */
+    border: 3px solid #fff; /* Add a white border for separation */
+    background-color: #f5f5f5; /* Match the page background for consistency */
+}
+
+/* Intro Box Styling */
+.intro-box {
+    margin: 20px auto; /* Add space and center the box */
+    width: 90%; /* Allow it to adjust based on screen size */
+    max-width: 610px; /* Limit maximum width for readability */
+    background-color: #F5E8D3; /* Light tan background */
+    border: 1px solid #E0D2BA; /* Subtle border in a slightly darker tan */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
+    padding: 15px; /* Add padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1em; /* Default font size */
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6; /* Improve readability */
+    text-align: center; /* Center-align the text */
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
