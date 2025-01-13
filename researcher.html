@@ -1,66 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anganwadi Data Access</title>
-    <script>
-        async function fetchData() {
-            const response = await fetch('cleaned_govt_preschools_data.csv');
-            const data = await response.text();
-            return data;
-        }
+<html>
+    <head>
+        <title>Research Data Download</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .form-container {
+                margin-top: 20px;
+            }
+            textarea {
+                width: 100%;
+                height: 50px;
+            }
+            table {
+                margin-top: 20px;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: center;
+            }
+            button {
+                margin-top: 10px;
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Research Data Download Tool</h1>
+        <div class="form-container">
+            <h2>Select Data</h2>
+            <label for="columns">Enter Columns (comma-separated, by header names):</label><br>
+            <textarea id="columns" placeholder="e.g., State Name, Urban-1, Govt Start Time"></textarea>
+            <br><br>
+            <label for="rows">Enter Rows (comma-separated, by numbers):</label><br>
+            <textarea id="rows" placeholder="e.g., 1, 2, 3"></textarea>
+            <br><br>
+            <button onclick="downloadData()">Download Selected Data</button>
+        </div>
 
-        function filterData() {
-            const state = document.getElementById("stateFilter").value;
-            const programType = document.getElementById("programTypeFilter").value;
-            const rows = window.data.split('\n');
-            const headers = rows[0];
-            const filtered = rows.filter((row, index) => {
-                if (index === 0) return true;
-                const columns = row.split(',');
-                const stateMatch = state === "" || columns[0] === state;
-                const programMatch = programType === "" || columns[2] === programType;
-                return stateMatch && programMatch;
-            });
-            const csvContent = filtered.join('\n');
-            downloadCSV(csvContent);
-        }
+        <script>
+            // Sample data to emulate the loaded dataset structure
+            const dataset = [
+                { "S.No": 1, "State Name": "Bihar", "Urban-1": 2, "Govt Start Time": "10:00", "Govt End Time": "2:00" },
+                { "S.No": 2, "State Name": "Punjab", "Urban-1": 3, "Govt Start Time": "9:00", "Govt End Time": "1:00" },
+                { "S.No": 3, "State Name": "Kerala", "Urban-1": 4, "Govt Start Time": "8:00", "Govt End Time": "12:00" },
+            ];
 
-        function downloadCSV(csvContent) {
-            const blob = new Blob([csvContent], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "filtered_data.csv";
-            a.click();
-        }
+            function downloadData() {
+                const columnsInput = document.getElementById("columns").value;
+                const rowsInput = document.getElementById("rows").value;
 
-        async function initializePage() {
-            window.data = await fetchData();
-        }
+                // Parse user inputs
+                const selectedColumns = columnsInput.split(',').map(col => col.trim());
+                const selectedRows = rowsInput.split(',').map(row => parseInt(row.trim(), 10) - 1);
 
-        window.onload = initializePage;
-    </script>
-</head>
-<body>
-    <h1>Access Anganwadi Data</h1>
-    <p>Filter the data based on your requirements and download the results.</p>
-    
-    <label for="stateFilter">Select State:</label>
-    <select id="stateFilter">
-        <option value="">--All States--</option>
-        <option value="Bihar">Bihar</option>
-        <!-- Add other states dynamically if needed -->
-    </select>
-    
-    <label for="programTypeFilter">Select Programme Type:</label>
-    <select id="programTypeFilter">
-        <option value="">--All Programme Types--</option>
-        <option value="1">Type 1</option>
-        <!-- Add other programme types dynamically if needed -->
-    </select>
-    
-    <button onclick="filterData()">Download Filtered Data</button>
-</body>
+                // Filter dataset based on user input
+                const filteredData = dataset
+                    .filter((_, index) => selectedRows.includes(index))
+                    .map(row =>
+                        Object.fromEntries(
+                            Object.entries(row).filter(([key]) => selectedColumns.includes(key))
+                        )
+                    );
+
+                // Convert filtered data to CSV
+                const csvContent = [
+                    selectedColumns.join(","),
+                    ...filteredData.map(row => selectedColumns.map(col => row[col] || "").join(","))
+                ].join("\n");
+
+                // Download CSV
+                const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "filtered_data.csv";
+                link.style.display = "none";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        </script>
+    </body>
 </html>
