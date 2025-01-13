@@ -2,9 +2,50 @@
 <html>
     <head>
         <title>Demo Website</title>
+        <link rel="stylesheet" href="styles/demo-style.css">
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Our Demonstration Website</h1>
-        <a href='our-team/index.html'>Learn more about our team</a>
-    </body>
+        
+        <!-- Banner -->
+        <div class="banner">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h1>Anganwadi Centers</h1>
+                    <a href="our-team/index.html" class="home-button">About Us</a>
+                </div>
+                <img src="images/harvard-logo.png" alt="Harvard Logo" class="banner-logo">
+            </div>
+        </div>
+        
+        <!-- Main Content Section -->
+        <div class="content-container">
+            <div class="intro-box">
+                <p>
+                    Created through the "Programming and Data for Policymakers" course at the Harvard Kennedy School, this platform showcases data from India’s Anganwadi centers. The platform aims to empower parents, researchers, and policymakers with insights to improve early childhood education.
+                </p>
+
+                <!-- Button to Open Modal -->
+                <a href="#popup-modal" class="popup-button">Data Source</a>
+
+                <!-- Pop-Up Modal -->
+                <div id="popup-modal" class="modal">
+                    <div class="modal-content">
+                        <a href="#" class="close-button">&times;</a>
+                        <p>
+                            This platform utilizes data gathered and maintained by UNICEF through its Anganwadi Centers. The data is collected on an annual basis.
+                        </p>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+
+            <!-- Main Text Content -->
+            <div class="main-content">
+                <h2>Dashboard</h2>
+                    <p>The functionality of the platform will go here.</p>
+                    <a href='our-team/index.html'>Learn more about our team</a>
+            </div>
+        </div>
 </html>
