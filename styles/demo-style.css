@@ -106,50 +106,58 @@ h1, h2 {
 /* Intro Box Pop-Up Modal */
 .modal {
     display: none; /* Hidden by default */
-    position: absolute; /* Position relative to intro-box */
-    top: 50%; /* Vertically center within intro-box */
-    left: 50%; /* Horizontally center within intro-box */
+    position: fixed; /* Fixed position to center relative to viewport */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
     transform: translate(-50%, -50%); /* Adjust for centering */
-    z-index: 1; /* Ensure it appears above other content in intro-box */
-    width: 90%; /* Adjust width relative to intro-box */
-    max-width: 300px; /* Optional: Limit maximum width */
-    background-color: #fff; /* White background */
-    padding: 15px; /* Padding inside modal */
-    border: 1px solid #888; /* Subtle border */
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 50%; /* Adjust width as needed */
+    max-width: 500px; /* Limit maximum width */
+    background-color: #F5E6E6; /* Very light maroon */
+    padding: 20px; /* Add padding inside modal */
+    border: 1px solid #E0D2BA; /* Subtle border */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    text-align: center; /* Center-align text */
+    box-sizing: border-box;
 }
+
+/* Modal Content */
+.modal-content {
+    position: relative; /* Ensure close button aligns properly */
+    text-align: center; /* Center-align text inside modal */
+}
+
+.modal-content p {
+    font-size: 0.9em; /* Slightly smaller font size for modal */
+    line-height: 1.4; /* Adjust line spacing */
+}
+
 
 /* Show Modal when Targeted */
 .modal:target {
     display: block; /* Show the modal */
 }
 
-/* Modal Content */
-.modal-content {
-    position: relative; /* Position content inside the modal */
-}
-
 /* Close Button */
 .close-button {
-    color: #aaa; /* Light gray */
+    color: #800000; /* Maroon color */
     position: absolute; /* Positioned within the modal */
-    top: 5px; /* Top corner */
-    right: 10px; /* Right corner */
-    font-size: 1.5em; /* Larger size */
-    font-weight: bold; /* Bold font */
+    top: -30px; /* Top corner */
+    right: -10px; /* Right corner */
+    font-size: 1.5em; /* Larger size for visibility */
+    font-weight: bold; /* Bold font for emphasis */
     text-decoration: none; /* Remove underline */
     cursor: pointer; /* Pointer cursor */
 }
 
 .close-button:hover {
-    color: #333; /* Darker on hover */
+    color: #660000; /* Darker shade of maroon on hover */
 }
 
-/* Button in Intro Box */
+/* Popup Button */
 .popup-button {
-    margin: 30px 0; /* Increase space above and below the button */
+    display: inline-block;
+    margin: 10px 0; /* Reduce spacing above and below the button */
     background-color: #D2B48C; /* Tan background */
     color: #fff; /* White text */
     border: none; /* Remove border */
@@ -175,4 +183,12 @@ h1, h2 {
     border-radius: 8px; /* Optional: Rounded corners */
 }
 
+/* Links in Modal */
+a {
+    color: #007BFF; /* Default link color */
+    text-decoration: none; /* Remove underline */
+}
 
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
