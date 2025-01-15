@@ -3,6 +3,7 @@
     <head>
         <title>Demo Website</title>
         <link rel="stylesheet" href="styles/demo-style.css">
+        <link rel="stylesheet" href="styles/transaction-style.css">
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     </head>
@@ -47,7 +48,15 @@
             <!-- Main Text Content -->
             <div class="main-content">
                 <h2>Dashboard</h2>
-                    <a href="researcher.html">Click here to download specific data points for particular centers.</a>
+                <div id="chart-container">
+                <h3>Average Curricular Transactions by Center</h3>
+                <div id="chart"></div>
+                </div>
+                <a href="researcher.html">Click here to download specific data points for particular centers.</a>
             </div>
         </div>
+        <!-- D3 and Custom Script -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="scripts/curricular-transaction.js"></script> 
+</body>
 </html>
