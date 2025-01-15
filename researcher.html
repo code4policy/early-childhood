@@ -1,80 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Research Data Download - Interactive</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-            }
-            .form-container {
-                margin-top: 20px;
-            }
-            .checkbox-group {
-                margin-bottom: 10px;
-            }
-            button {
-                margin-top: 10px;
-                padding: 8px 12px;
-                font-size: 14px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Research Data Download Tool</h1>
-        <div class="form-container">
-            <h2>Select Data</h2>
-            <div class="checkbox-group">
-                <h3>Columns:</h3>
-                <label><input type="checkbox" value="S.No" class="column-checkbox"> S.No</label><br>
-                <label><input type="checkbox" value="State Name" class="column-checkbox"> State Name</label><br>
-                <label><input type="checkbox" value="Urban-1" class="column-checkbox"> Urban-1</label><br>
-                <label><input type="checkbox" value="Govt Start Time" class="column-checkbox"> Govt Start Time</label><br>
-                <label><input type="checkbox" value="Govt End Time" class="column-checkbox"> Govt End Time</label>
-            </div>
-            <div class="checkbox-group">
-                <h3>Rows:</h3>
-                <label><input type="checkbox" value="0" class="row-checkbox"> Row 1</label><br>
-                <label><input type="checkbox" value="1" class="row-checkbox"> Row 2</label><br>
-                <label><input type="checkbox" value="2" class="row-checkbox"> Row 3</label>
-            </div>
-            <button onclick="downloadData()">Download Selected Data</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Dashboard</title>
+    <link rel="stylesheet" href="styles/demo-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
+</head>
+<body>
+    <h1>Researcher Dashboard</h1>
+    <div id="summary-section">
+        <h2>Data Summary</h2>
+        <p id="data-summary">
+            The dataset provides comprehensive insights into Early Childhood Care and Education (ECCE) at Anganwadi Centers, focusing on enrollment, nutrition, infrastructure, and staff training. Use the tools below to access and analyze specific data points.
+        </p>
+    </div>
+    <div id="data-tools">
+        <h2>Data Tools</h2>
+        <button id="load-data">Load Data</button>
+        <div id="filter-controls" style="display: none;">
+            <label for="column-filter">Filter by Column:</label>
+            <select id="column-filter"></select>
+            <input type="text" id="filter-value" placeholder="Enter filter value">
+            <button id="apply-filter">Apply Filter</button>
+            <button id="reset-filter">Reset</button>
         </div>
-
-        <script>
-            const dataset = [
-                { "S.No": 1, "State Name": "Bihar", "Urban-1": 2, "Govt Start Time": "10:00", "Govt End Time": "2:00" },
-                { "S.No": 2, "State Name": "Punjab", "Urban-1": 3, "Govt Start Time": "9:00", "Govt End Time": "1:00" },
-                { "S.No": 3, "State Name": "Kerala", "Urban-1": 4, "Govt Start Time": "8:00", "Govt End Time": "12:00" },
-            ];
-
-            function downloadData() {
-                const selectedColumns = Array.from(document.querySelectorAll(".column-checkbox:checked")).map(checkbox => checkbox.value);
-                const selectedRows = Array.from(document.querySelectorAll(".row-checkbox:checked")).map(checkbox => parseInt(checkbox.value));
-
-                const filteredData = dataset
-                    .filter((_, index) => selectedRows.includes(index))
-                    .map(row =>
-                        Object.fromEntries(
-                            Object.entries(row).filter(([key]) => selectedColumns.includes(key))
-                        )
-                    );
-
-                const csvContent = [
-                    selectedColumns.join(","),
-                    ...filteredData.map(row => selectedColumns.map(col => row[col] || "").join(","))
-                ].join("\n");
-
-                const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-                const link = document.createElement("a");
-                link.href = URL.createObjectURL(blob);
-                link.download = "filtered_data.csv";
-                link.style.display = "none";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-        </script>
-    </body>
+        <div id="data-table"></div>
+        <button id="download-data" style="display: none;">Download Filtered Data</button>
+    </div>
+    <script src="researcher.js"></script>
+</body>
 </html>
-
