@@ -8,10 +8,29 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Main content and chart container styling for seamless integration */
+.main-content {
+    background-color: #ffffff; /* White background to match the chart */
+    border: none;             /* Remove border distinction */
+    border-radius: 0;         /* Remove rounded corners */
+    padding: 20px;            /* Add space inside the box */
+    box-shadow: none;         /* Remove shadow distinction */
+    overflow: auto;           /* Allow content to expand */
+    transition: height 0.3s ease; /* Smooth resizing when the chart extends */
+}
+
+/* Chart container styling to match main-content */
+#chart-container {
+    background-color: #ffffff; /* Same white background as main-content */
+    padding: 20px;             /* Space around the chart */
+    border: none;              /* Remove border */
+    border-radius: 0;          /* Remove rounded corners */
+    box-shadow: none;          /* Remove shadow */
+}
+
 #chart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .bar {
@@ -22,11 +41,21 @@ h1 {
     fill: orange;
 }
 
+/* Font styling for axis and labels */
 .axis text {
-    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; /* Set font size */
+    fill: #333;      /* Text color */
+}
+
+.label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; /* Match font size of axis labels */
+    fill: #333;      /* Match text color */
 }
 
 .axis path, .axis line {
     fill: none;
     shape-rendering: crispEdges;
 }
+
