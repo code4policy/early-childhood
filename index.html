@@ -2,9 +2,21 @@
 <html>
     <head>
         <title>Demo Website</title>
+        <!-- Existing Stylesheets -->
         <link rel="stylesheet" href="styles/demo-style.css">
+        <link rel="stylesheet" href="styles/transaction-style.css">
+        
+        <!-- Add Google Fonts -->
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+        <!-- Add SheetJS Library for Excel Parsing -->
+        <script src="https://cdn.sheetjs.com/xlsx-0.17.0/xlsx.full.min.js"></script> <!-- New addition -->
+
+        <!-- Add D3.js Library for Data Visualization -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-ancestors 'self' https://www.playlab.ai;">
+
     </head>
     <body>
       
@@ -47,7 +59,31 @@
             <!-- Main Text Content -->
             <div class="main-content">
                 <h2>Dashboard</h2>
-                    <a href="researcher.html">Click here to download specific data points for particular centers.</a>
+                <div id="chart-container">
+                    <h3>Average Curricular Transactions by Center</h3>
+                    <button id="toggle-chart">Show All</button>
+                    <div id="chart"></div>
+                </div>
+                <a href="researcher.html">Click here to download specific data points for particular centers.</a>
             </div>
         </div>
+        
+        <!-- Chatbot Button -->
+        <button id="chatbot-button" title="Chat with us">💬 Chat with us</button>
+
+        <!-- Chatbot Modal -->
+        <div id="chatbot-modal" class="modal">
+            <div class="modal-content">
+                <button id="chatbot-close" class="close-button">&times;</button>
+                <iframe id="chatbot-frame" src="https://www.playlab.ai/project/cm5zq311w0wertgdiaz0g4irt" title="Chatbot"></iframe>
+            </div>
+        </div>
+
+        </div>
+
+    <!-- Custom Scripts -->
+    <script src="scripts/curricular-transaction.js"></script>
+    <script src="scripts/chatbot-script.js" defer></script>
+            
+    </body>
 </html>
