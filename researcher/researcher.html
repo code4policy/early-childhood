@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Dashboard</title>
+    <link rel="stylesheet" href="styles/demo-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
+</head>
+<body>
+    <h1>Researcher Dashboard</h1>
+    <div id="summary-section">
+        <h2>Data Summary</h2>
+        <p id="data-summary">
+            The dataset provides comprehensive insights into Early Childhood Care and Education (ECCE) at Anganwadi Centers, focusing on enrollment, nutrition, infrastructure, and staff training. Use the tools below to access and analyze specific data points.
+        </p>
+    </div>
+    <div id="data-tools">
+        <h2>Data Tools</h2>
+        <button id="load-data">Load Data</button>
+        <div id="filter-controls" style="display: none;">
+            <label for="column-filter">Filter by Column:</label>
+            <select id="column-filter"></select>
+            <input type="text" id="filter-value" placeholder="Enter filter value">
+            <button id="apply-filter">Apply Filter</button>
+            <button id="reset-filter">Reset</button>
+        </div>
+        <div id="data-table"></div>
+        <button id="download-data" style="display: none;">Download Filtered Data</button>
+    </div>
+    <script src="researcher.js"></script>
+</body>
+</html>
