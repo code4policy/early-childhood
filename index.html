@@ -15,6 +15,8 @@
 
         <!-- Add D3.js Library for Data Visualization -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-ancestors 'self' https://www.playlab.ai;">
+
     </head>
     <body>
       
@@ -66,8 +68,22 @@
             </div>
         </div>
         
-            <!-- Load your custom script -->
-            <script src="scripts/curricular-transaction.js"></script> 
+        <!-- Chatbot Button -->
+        <button id="chatbot-button" title="Chat with us">💬 Chat with us</button>
+
+        <!-- Chatbot Modal -->
+        <div id="chatbot-modal" class="modal">
+            <div class="modal-content">
+                <button id="chatbot-close" class="close-button">&times;</button>
+                <iframe id="chatbot-frame" src="https://www.playlab.ai/project/cm5zq311w0wertgdiaz0g4irt" title="Chatbot"></iframe>
+            </div>
+        </div>
+
+        </div>
+
+    <!-- Custom Scripts -->
+    <script src="scripts/curricular-transaction.js"></script>
+    <script src="scripts/chatbot-script.js" defer></script>
             
     </body>
 </html>

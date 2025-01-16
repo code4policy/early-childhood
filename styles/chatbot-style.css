@@ -1,0 +1,64 @@
+/* Chatbot Button */
+#chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #800000; /* Harvard maroon */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+#chatbot-button:hover {
+    background-color: #D2B48C; /* Harvard tan */
+    color: #333;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #F5E8D3; /* Light tan */
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #800000; /* Harvard maroon */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#chatbot-frame {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
