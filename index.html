@@ -5,6 +5,7 @@
         <!-- Existing Stylesheets -->
         <link rel="stylesheet" href="styles/demo-style.css">
         <link rel="stylesheet" href="styles/transaction-style.css">
+        <link rel="stylesheet" href="styles/chatbot-style.css">
         
         <!-- Add Google Fonts -->
         <meta charset="UTF-8">
@@ -15,7 +16,10 @@
 
         <!-- Add D3.js Library for Data Visualization -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-ancestors 'self' https://www.playlab.ai;">
+
+        <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' https://www.playlab.ai blob:;
+        frame-src 'self' https://www.playlab.ai;">
 
     </head>
     <body>
@@ -69,15 +73,20 @@
         </div>
         
         <!-- Chatbot Button -->
-        <button id="chatbot-button" title="Chat with us">💬 Chat with us</button>
+        <button id="chatbot-button" title="Ask AI">🤖 Ask AI</button>
 
-        <!-- Chatbot Modal -->
-        <div id="chatbot-modal" class="modal">
-            <div class="modal-content">
-                <button id="chatbot-close" class="close-button">&times;</button>
-                <iframe id="chatbot-frame" src="https://www.playlab.ai/project/cm5zq311w0wertgdiaz0g4irt" title="Chatbot"></iframe>
-            </div>
-        </div>
+
+            <!-- Chatbot Modal -->
+            <div id="chatbot-modal" class="modal">
+                <div class="modal-content">
+                    <button id="chatbot-close" class="close-button">&times;</button>
+                    <iframe id="chatbot-frame" src="https://www.playlab.ai/embedded/cm610zdj119l1vohwvspzag47" title="Chatbot"></iframe>
+                </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
 
         </div>
 
