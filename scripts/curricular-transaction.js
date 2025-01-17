@@ -6,7 +6,7 @@ const data = [
     { Location: "Ahmadguda, Keesara, Medchal district", Average: 2.0 },
     { Location: "Other Center 1", Average: 3.5 },
     { Location: "Other Center 2", Average: 1.8 },
-    { Location: "Location 1 from Excel", Average: 2.368421 },
+    { Location: "Location 1", Average: 2.368421 },
     { Location: "Location 2 from Excel", Average: 2.473684 },
     { Location: "Location 3 from Excel", Average: 2.315789 },
     { Location: "Location 4 from Excel", Average: 3.210526 },
