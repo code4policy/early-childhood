@@ -6,30 +6,30 @@ const data = [
     { Location: "Ahmadguda, Keesara, Medchal district", Average: 2.0 },
     { Location: "Other Center 1", Average: 3.5 },
     { Location: "Other Center 2", Average: 1.8 },
-    { Location: "Location 1", Average: 2.368421 },
-    { Location: "Location 2 from Excel", Average: 2.473684 },
-    { Location: "Location 3 from Excel", Average: 2.315789 },
-    { Location: "Location 4 from Excel", Average: 3.210526 },
-    { Location: "Location 5 from Excel", Average: 2.0 },
-    { Location: "Location 6 from Excel", Average: 3.5 },
-    { Location: "Location 7 from Excel", Average: 1.8 },
-    { Location: "Location 8 from Excel", Average: 2.368421 },
-    { Location: "Location 9 from Excel", Average: 2.473684 },
-    { Location: "Location 10 from Excel", Average: 2.315789 },
-    { Location: "Location 11 from Excel", Average: 3.210526 },
-    { Location: "Location 12 from Excel", Average: 2.0 },
-    { Location: "Location 13 from Excel", Average: 3.5 },
-    { Location: "Location 14 from Excel", Average: 1.8 },
-    { Location: "Location 15 from Excel", Average: 2.368421 },
-    { Location: "Location 16 from Excel", Average: 2.473684 },
-    { Location: "Location 17 from Excel", Average: 2.315789 },
-    { Location: "Location 18 from Excel", Average: 3.210526 },
-    { Location: "Location 19 from Excel", Average: 2.0 },
-    { Location: "Location 20 from Excel", Average: 3.5 },
-    { Location: "Location 21 from Excel", Average: 1.8 },
-    { Location: "Location 22 from Excel", Average: 2.368421 },
-    { Location: "Location 23 from Excel", Average: 2.473684 },
-    { Location: "Location 24 from Excel", Average: 2.315789 }
+    { Location: "AWC Ahmadguda", Average: 2.368421 },
+    { Location: "AWC Medchal District ", Average: 2.473684 },
+    { Location: "AWC-III SC Colony", Average: 2.315789 },
+    { Location: "AWC-Lalanguda", Average: 3.210526 },
+    { Location: "AWC Ahmadguda-2", Average: 2.0 },
+    { Location: " AWC Vandana school", Average: 3.5 },
+    { Location: "Malik High School", Average: 1.8 },
+    { Location: "AWC Shameerpet", Average: 2.368421 },
+    { Location: "AWC Ankiredapelly", Average: 2.473684 },
+    { Location: "AWC Nagaram", Average: 2.315789 },
+    { Location: "AWC Keesera", Average: 3.210526 },
+    { Location: "Blue bells SHIVANANDAPURI", Average: 2.0 },
+    { Location: "AWC-III BANGARU", Average: 3.5 },
+    { Location: "AWC-II,LALGADI", Average: 1.8 },
+    { Location: "AWC NAGARAM-2", Average: 2.368421 },
+    { Location: "AWC Rampally", Average: 2.473684 },
+    { Location: "AWC Premavatipet", Average: 2.315789 },
+    { Location: "AWC Milardevpalli", Average: 3.210526 },
+    { Location: "AWC Budwel", Average: 2.0 },
+    { Location: "AWC CHINTALMET", Average: 3.5 },
+    { Location: "AWC Rajendra Nagar", Average: 1.8 },
+    { Location: "AWC Brundavan colony", Average: 2.368421 },
+    { Location: "AWC PADMASALIPURAM", Average: 2.473684 },
+    { Location: "AWC UPPERPALLY", Average: 2.315789 }
 ];
 
 // Sort the data by Average in descending order
@@ -91,6 +91,16 @@ const drawChart = (filteredData) => {
         .attr("dy", ".35em") // Center vertically
         .text(d => (d.Average ? d.Average.toFixed(2) : ""));
 
+    // Add key below the x-axis
+    svg.append("text")
+        .attr("class", "chart-key")
+        .attr("x", margin.left + width / 2) // Center the key horizontally
+        .attr("y", height - margin.bottom + 40) // Add space below the x-axis
+        .attr("text-anchor", "middle") // Center-align the text
+        .style("font-size", "12px") // Font size
+        .style("fill", "maroon") // Maroon color for the text
+        .style("font-weight", "bold") // Make the text bold
+        .text("4 = Excellent | 3 = Good | 2 = Average | 1 = Poor");
 };
 
 // Initial rendering with the top 5 issues

@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins, fallback to Arial or sans-serif */
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins as primary font */
     margin: 0;
     padding: 0;
     background-color: #f5f5f5; /* Light grey background */
@@ -173,14 +173,15 @@ h1, h2 {
     background-color: #B8976C; /* Slightly darker tan on hover */
 }
 
-/* Main Content (Right Side) */
+/* Ensure main-content is a positioned container */
 .main-content {
-    flex: 1; /* Take up the remaining space */
+    flex: 1; /* Take up remaining space */
     padding: 20px; /* Add padding for content spacing */
     background-color: #fff; /* White background */
     color: #333; /* Dark text */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Optional: Add subtle shadow */
     border-radius: 8px; /* Optional: Rounded corners */
+    position: relative; /* Make this container the reference for absolute positioning */
 }
 
 /* Links in Modal */
@@ -191,4 +192,30 @@ a {
 
 a:hover {
     text-decoration: underline; /* Underline on hover */
+}
+
+#toggle-chart {
+    font-family: 'Poppins', Arial, sans-serif; /* Ensure Poppins is applied */
+    font-size: 12px; /* Optional: Adjust the size */
+    font-weight: 400; /* Match the Poppins weight you want */
+    background-color: #D2B48C; /* Example styling */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase; /* Optional: Make text uppercase */
+}
+
+/* Header Style */
+#chart-header {
+    color: maroon; /* Maroon color for the header */
+    font-weight: bold; /* Optional: Make the header bold */
+}
+
+/* Key Styling (D3.js Key Text) */
+.chart-key {
+    fill: maroon; /* Maroon color for the key text */
+    font-weight: bold; /* Make the key text bold */
+    font-size: 12px; /* Adjust font size if needed */
 }
