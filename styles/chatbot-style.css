@@ -1,8 +1,8 @@
 /* Chatbot Button */
 #chatbot-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 20px; /* Position at the bottom */
+    right: 20px; /* Position on the right */
     background-color: #800000; /* Harvard maroon */
     color: #fff;
     border: none;
@@ -21,31 +21,38 @@
     color: #333;
 }
 
-/* Modal */
-.modal {
-    display: none;
+/* Chatbot Modal */
+#chatbot-modal {
+    display: none; /* Initially hidden */
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1001;
-    justify-content: center;
-    align-items: center;
+    bottom: 90px; /* Slightly above the button */
+    right: 20px; /* Align with button */
+    width: 400px; /* Increased modal width */
+    height: 600px; /* Increased modal height */
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 1001; /* Ensure it stays on top */
+    overflow: hidden; /* Prevent content overflow */
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column; /* Ensure content stacks vertically */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and borders in size calculations */
 }
 
-/* Modal Content */
-.modal-content {
-    background: #F5E8D3; /* Light tan */
-    width: 90%;
-    max-width: 600px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+
+/* Chatbot Modal Content */
+#chatbot-modal .modal-content {
+    background: #fff; /* White background */
+    width: 100%; /* Full width of the modal */
+    height: 100%; /* Full height of the modal */
+    overflow: hidden; /* Prevent overflow */
+    display: flex;
+    flex-direction: column;
 }
 
-.close-button {
+/* Chatbot Close Button */
+#chatbot-modal .close-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -54,12 +61,13 @@
     color: #800000; /* Harvard maroon */
     font-size: 24px;
     cursor: pointer;
+    z-index: 10; /* Ensure it stays above iframe */
 }
 
-#chatbot-frame {
-    width: 100%;
-    height: 500px;
-    border: none;
+#chatbot-modal #chatbot-frame {
+    width: 100%; /* Full width of modal content */
+    height: 100%; /* Full height of modal content */
+    border: none; /* Remove iframe border */
 }
 
 

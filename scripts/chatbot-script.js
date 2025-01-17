@@ -1,22 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const chatbotButton = document.getElementById('chatbot-button');
-    const chatbotModal = document.getElementById('chatbot-modal');
-    const chatbotClose = document.getElementById('chatbot-close');
+// Get references to modal elements
+const chatbotButton = document.getElementById('chatbot-button');
+const chatbotModal = document.getElementById('chatbot-modal');
+const closeModalButton = document.getElementById('chatbot-close');
 
-    // Show modal when chatbot button is clicked
-    chatbotButton.addEventListener('click', function() {
-        chatbotModal.style.display = 'flex';
-    });
+// Show the modal when the button is clicked
+chatbotButton.addEventListener('click', () => {
+    chatbotModal.style.display = 'flex'; // Show modal with flexbox alignment
+});
 
-    // Hide modal when close button is clicked
-    chatbotClose.addEventListener('click', function() {
-        chatbotModal.style.display = 'none';
-    });
-
-    // Hide modal when clicking outside of the modal content
-    window.addEventListener('click', function(event) {
-        if (event.target === chatbotModal) {
-            chatbotModal.style.display = 'none';
-        }
-    });
+// Hide the modal when the close button is clicked
+closeModalButton.addEventListener('click', () => {
+    chatbotModal.style.display = 'none'; // Hide modal
 });
