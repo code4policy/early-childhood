@@ -95,10 +95,11 @@ const drawChart = (filteredData) => {
     svg.append("text")
         .attr("class", "chart-key")
         .attr("x", margin.left + width / 2) // Center the key horizontally
-        .attr("y", height - margin.bottom + 40) // Add more space below the x-axis
+        .attr("y", height - margin.bottom + 40) // Add space below the x-axis
         .attr("text-anchor", "middle") // Center-align the text
-        .style("font-size", "12px") // Adjust font size
-        .style("fill", "#333") // Dark text color
+        .style("font-size", "12px") // Font size
+        .style("fill", "maroon") // Maroon color for the text
+        .style("font-weight", "bold") // Make the text bold
         .text("4 = Excellent | 3 = Good | 2 = Average | 1 = Poor");
 };
 
