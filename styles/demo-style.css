@@ -173,14 +173,15 @@ h1, h2 {
     background-color: #B8976C; /* Slightly darker tan on hover */
 }
 
-/* Main Content (Right Side) */
+/* Ensure main-content is a positioned container */
 .main-content {
-    flex: 1; /* Take up the remaining space */
+    flex: 1; /* Take up remaining space */
     padding: 20px; /* Add padding for content spacing */
     background-color: #fff; /* White background */
     color: #333; /* Dark text */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Optional: Add subtle shadow */
     border-radius: 8px; /* Optional: Rounded corners */
+    position: relative; /* Make this container the reference for absolute positioning */
 }
 
 /* Links in Modal */
