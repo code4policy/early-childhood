@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('data/ECCE Data 2022.csv')
+    fetch('data/ECCE_Data_2022.csv')
         .then(response => response.text())
         .then(data => {
             const parsedData = parseCSV(data);
