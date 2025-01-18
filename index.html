@@ -2,9 +2,25 @@
 <html>
     <head>
         <title>Demo Website</title>
+        <!-- Existing Stylesheets -->
         <link rel="stylesheet" href="styles/demo-style.css">
+        <link rel="stylesheet" href="styles/transaction-style.css">
+        <link rel="stylesheet" href="styles/chatbot-style.css">
+        
+        <!-- Add Google Fonts -->
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+        <!-- Add SheetJS Library for Excel Parsing -->
+        <script src="https://cdn.sheetjs.com/xlsx-0.17.0/xlsx.full.min.js"></script> <!-- New addition -->
+
+        <!-- Add D3.js Library for Data Visualization -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+
+        <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' https://www.playlab.ai blob:;
+        frame-src 'self' https://www.playlab.ai;">
+
     </head>
     <body>
       
@@ -34,19 +50,49 @@
                     <div class="modal-content">
                         <a href="#" class="close-button">&times;</a>
                         <p>
-                            This platform utilizes data gathered and maintained by UNICEF through its Anganwadi Centers. The data is collected on an annual basis.
+                            This data is collected and managed by UNICEF India as part of their partnership with Anganwadi Centers. Each year, UNICEF data collectors, alongside government monitoring officers, visit each site to conduct observations. Together, they engage in a norming process to agree on a final score for each site based on predefined criteria. This scoring system allows UNICEF to strategically prioritize support and allocate resources to centers most in need. 
+                        </p>
+                        <p>
+                            For additional queries, please contact: <a href="mailto:sannosrivastava@hks.harvard.edu">sannosrivastava@hks.harvard.edu</a>.
                         </p>
                     </div>
                 </div>
                 <p></p>
             </div>
 
-            <!-- Main Text Content -->
             <div class="main-content">
                 <h2>Dashboard</h2>
-                    <a href="researcher/researcher.html">Please download specifc data points from here</a>
-                    <br/>
-                    <a href='our-team/index.html'>Learn more about our team</a>
+                <div id="chart-container">
+                    <h3 id="chart-header">Average Performance by Center in Telangana</h3>
+                    <button id="toggle-chart">Show All</button>
+                    <div id="chart"></div>
+                </div>
+                <a href="researcher/index.html">Click here to download specific data points for particular centers.</a>
             </div>
+
         </div>
+        
+        <!-- Chatbot Button -->
+        <button id="chatbot-button" title="Ask AI">🤖 Ask AI</button>
+
+
+            <!-- Chatbot Modal -->
+            <div id="chatbot-modal" class="modal">
+                <div class="modal-content">
+                    <button id="chatbot-close" class="close-button">&times;</button>
+                    <iframe id="chatbot-frame" src="https://www.playlab.ai/embedded/cm610zdj119l1vohwvspzag47" title="Chatbot"></iframe>
+                </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
+
+        </div>
+
+    <!-- Custom Scripts -->
+    <script src="scripts/curricular-transaction.js"></script>
+    <script src="scripts/chatbot-script.js" defer></script>
+            
+    </body>
 </html>
