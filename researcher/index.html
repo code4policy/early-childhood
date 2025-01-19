@@ -4,39 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Researcher Download Dashboard</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Link to Your CSS -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
 
 <header>
-    <h1>Researcher Download Dashboard</h1>
+    <h1>Data for UNICEF's Anganwadi Centers</h1>
+        <button class="return-button" onclick="location.href='../index.html'">Home</button>
 </header>
 
-<div class="filter-section">
-    <label for="state-filter">Select State:</label>
-    <select id="state-filter">
-        <option value="All">All</option>
-    </select>
-    <label for="district-filter">Select District:</label>
-    <select id="district-filter">
-        <option value="All">All</option>
-    </select>
+<!-- Combined Box for Filter, Column Selection, and Download -->
+<div class="control-panel">
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <label for="state-filter">Select State:</label>
+        <select id="state-filter">
+            <option value="All">All</option>
+        </select>
+        <label for="district-filter">Select District:</label>
+        <select id="district-filter">
+            <option value="All">All</option>
+        </select>
+    </div>
+
+    <!-- Column Selection Section -->
+    <div class="column-section">
+        <label for="column-filter">Select Columns:</label>
+        <select id="column-filter" multiple>
+        </select>
+    </div>
     <button onclick="filterData()">Filter</button>
-</div>
-
-<div class="column-section">
-    <label for="column-filter">Select Columns:</label>
-    <select id="column-filter" multiple>
-    </select>
-</div>
-
-<div class="download-section">
-    <button onclick="downloadData('all')">Download Entire Dataset</button>
     <button onclick="downloadData('filtered')">Download Filtered Data</button>
+    <button onclick="downloadData('all')">Download Entire Dataset</button>
 </div>
 
-<div class="data-section" id="data-display"></div>
+<!-- Data Display Section -->
+<div class="container">
+    <h2>Preview filtered data:</h2>
+    <div class="data-section" id="data-display">
+        <!-- Spreadsheet data will dynamically load here -->
+    </div>
+</div>
 
 <script src="scripts/script.js"></script>
 </body>
 </html>
+

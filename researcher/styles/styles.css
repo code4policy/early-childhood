@@ -1,157 +1,199 @@
 /* General Styles */
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Consistent Poppins font across the page */
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* Light grey background */
-    color: #333; /* Dark text for readability */
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-/* Return Button Container */
-.return-button-container {
-    text-align: right; /* Align the button to the right */
-    margin-bottom: 10px; /* Add spacing below the button */
+/* Global Font Styling */
+* {
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins globally with fallback fonts */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element dimensions */
 }
-
-/* Return Button Styling */
-#return-button {
-    background-color: #800000; /* Maroon button */
-    color: #fff; /* White text */
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer;
-    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins font */
-    transition: background-color 0.3s ease;
-}
-
-#return-button:hover {
-    background-color: #660000; /* Darker maroon on hover */
-}
-
 
 /* Header Styling */
 header {
-    background-color: #D2B48C; /* Tan color for consistency */
-    color: #fff; /* White text for contrast */
+    position: relative; /* Enable positioning for child elements */
+    background-color: #D2B48C; /* Tan */
+    color: #fff;
     padding: 15px 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Poppins', Arial, sans-serif; /* Ensure Poppins for header */
+    text-align: left; /* Align header content to the left */
+    font-size: 1.5em; /* Smaller font size for the header */
+    font-weight: 600; /* Slightly lighter font weight */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+header h1 {
+    margin: 0; /* Remove extra margin around the title */
+    font-size: 1.2em; /* Further reduce font size for the title */
+}
+
+.return-button {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text for contrast */
+    padding: 5px 10px; /* Reduced padding for proportional button size */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.65em; /* Smaller font size */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor */
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins font */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    position: absolute; /* Keep it positioned within the header */
+    top: 50%; /* Center vertically */
+    right: 20px; /* Position it to the right */
+    transform: translateY(-50%); /* Adjust for proper centering */
+}
+
+.return-button:hover {
+    background-color: #D2B48C; /* Tan background on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Control Panel Styling */
+.control-panel {
+    background-color: #fff; /* White background for the box */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1200px; /* Match the max-width of the container */
+    width: 100%; /* Ensure it stretches to full width within its container */
+    margin: 20px auto; /* Center the box with spacing above and below */
+}
+
+/* Section Spacing Inside Control Panel */
+.control-panel > div {
+    margin-bottom: 20px; /* Add spacing between sections */
+}
+
+/* Remove Extra Spacing for the Last Section */
+.control-panel > div:last-child {
+    margin-bottom: 0;
+}
+
+/* Filter Section Styling */
+.filter-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px; /* Add space between elements */
+    background-color: transparent; /* Remove background */
+    border: none; /* Remove borders */
+    padding: 0; /* Remove additional padding */
+}
+
+label[for="state-filter"] {
+    margin-bottom: 5px; /* Space below label */
+}
+
+#state-filter,
+#district-filter {
+    margin-bottom: 10px; /* Add spacing between dropdowns */
+    width: 100%; /* Ensure dropdown stretches to full width */
+}
+
+/* Column Selection Styling */
+.column-section {
+    display: flex;
+    flex-direction: column; /* Stack column selection vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px; /* Add space between elements */
+}
+
+/* Add Consistent Spacing Between Buttons */
+.control-panel button {
+    margin-top: 10px; /* Add spacing between buttons when stacked */
+}
+
+/* Container for Data Section */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-height: 600px; /* Limit container height for scrolling */
+}
+
+/* Data Section */
+.data-section {
     font-size: 0.9em;
-    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins for tables */
-}
-
-th, td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #ddd; /* Subtle borders for table cells */
-}
-
-th {
-    background-color: #D2B48C; /* Tan background for table headers */
-    color: #fff; /* White text for headers */
-    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
 }
 
 /* Buttons */
 button {
-    background-color: #800000; /* Maroon color for buttons */
+    background-color: #800000; /* Maroon */
     color: #fff; /* White text */
     border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins for buttons */
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #660000; /* Darker maroon on hover */
-}
-
-/* Links */
-a {
-    color: #007BFF; /* Blue links for visibility */
-    text-decoration: none;
-    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins for links */
-}
-
-a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-
-    table {
-        font-size: 0.8em;
-    }
-
-    button {
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-}
-
-/* Page Container (Outer Box) */
-.page-container {
-    max-width: 1200px; /* Limit the width of the entire content */
-    margin: 20px auto; /* Center the box and add a margin around the page */
-    padding: 20px; /* Padding inside the outer box */
-    background-color: #fff; /* White background for the box */
-    border: 1px solid #ddd; /* Subtle border for the box */
-    border-radius: 8px; /* Rounded corners for the outer box */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    box-sizing: border-box; /* Ensure padding and border are included in width */
-}
-
-/* Content Container (Inner Box) */
-.container {
-    padding: 20px; /* Padding inside the content area */
-    background-color: #f9f9f9; /* Light grey background for contrast */
-    border: 1px solid #ccc; /* Subtle border for inner content */
-    border-radius: 5px; /* Slightly rounded corners for the inner box */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
-    font-family: 'Poppins', Arial, sans-serif; /* Ensure consistent font */
-    overflow: auto; /* Enable scrolling for overflowing content */
-    max-height: 400px; /* Limit the height of the container */
-}
-
-/* Download Button Container */
-.download-button-container {
-    margin-top: 40px; /* Add space above the button */
-    text-align: left; /* Align the button to the left */
-}
-
-/* Button Styling */
-#download-button {
-    background-color: #800000; /* Maroon button */
-    color: #fff; /* White text */
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
+    padding: 8px 15px; /* Reduced padding for narrower buttons */
+    font-size: 0.9em; /* Slightly smaller font size */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     font-family: 'Poppins', Arial, sans-serif;
     transition: background-color 0.3s ease;
 }
 
-#download-button:hover {
-    background-color: #660000; /* Darker maroon on hover */
+button:hover {
+    background-color: #660000; /* Darker Maroon */
+}
+
+/* Style for dynamically generated table */
+#data-display table {
+    font-family: 'Poppins', Arial, sans-serif; /* Ensure Poppins for the table */
+    font-size: 0.9em; /* Adjust font size if needed */
+    width: 100%; /* Ensure the table takes full width of the container */
+    border-collapse: collapse; /* Remove spacing between table cells */
+    color: #333; /* Dark text for readability */
+}
+
+/* Style for table headers */
+#data-display th {
+    font-family: 'Poppins', Arial, sans-serif; /* Ensure Poppins for headers */
+    font-weight: bold; /* Bold headers */
+    background-color: #D2B48C; /* Tan background for headers */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding inside header cells */
+    text-align: left; /* Left align text */
+    border: 1px solid #ddd; /* Subtle border */
+}
+
+/* Style for table data cells */
+#data-display td {
+    font-family: 'Poppins', Arial, sans-serif; /* Ensure Poppins for cells */
+    padding: 10px; /* Padding inside cells */
+    text-align: left; /* Left align text */
+    border: 1px solid #ddd; /* Subtle border for separation */
+}
+
+/* Styling for Data Display Section Headline */
+.container h2 {
+    font-size: 1.2em; /* Smaller font size for the headline */
+    font-weight: normal; /* Remove bold styling */
+    color: #333; /* Dark grey text for readability */
+    margin-bottom: 20px; /* Add spacing below the headline */
+    text-align: left; /* Align the headline to the left */
+    font-family: 'Poppins', Arial, sans-serif; /* Use Poppins for consistency */
+}
+
+#column-filter {
+    width: 100%; /* Make the dropdown take the full width of its container */
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    padding-left: 10px; /* Add space to the left of the text */
+    background-color: #f9f9f9; /* Light grey background */
+    border: 1px solid #ccc; /* Subtle border */
+    box-sizing: border-box; /* Include padding in width calculation */
+    appearance: none; /* Remove default dropdown styling */
+    background-clip: padding-box; /* Ensure the background color applies correctly */
 }
 

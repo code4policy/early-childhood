@@ -78,5 +78,18 @@
     border: none; /* Remove iframe border */
 }
 
-
+/* Use a more specific selector */
+.main-content .data-button {
+    background-color: #800000 !important; /* Force maroon */
+    color: #fff !important; /* Force white text */
+    padding: 15px 30px;
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
