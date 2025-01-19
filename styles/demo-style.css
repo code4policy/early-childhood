@@ -219,3 +219,37 @@ a:hover {
     font-weight: bold; /* Make the key text bold */
     font-size: 12px; /* Adjust font size if needed */
 }
+
+/* Styling for the Downloadable Data Button */
+.data-button {
+    background-color: #800000; /* Maroon color */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    padding: 15px 30px; /* Larger padding for prominence */
+    font-size: 1.2em; /* Prominent font size */
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins font */
+    font-weight: 600; /* Bold text for emphasis */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    text-align: center; /* Center-align the text */
+    display: inline-block; /* Ensure proper alignment */
+    margin-top: 30px; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.data-button:hover {
+    background-color: #660000; /* Darker maroon on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Enhanced Main Content Styling with Specificity */
+.content-container .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff !important;
+    color: #333 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 8px !important;
+    position: relative;
+}
